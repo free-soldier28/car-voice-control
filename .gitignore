@@ -1,0 +1,41 @@
+--- Standard Python Exclusions ---
+
+Ignore compiled Python bytecode files
+
+*.pyc
+
+Ignore Python cache directory
+
+pycache/
+
+Ignore files created by the CPython interpreter (e.g., used during debugging)
+
+*~$
+
+Virtual environments
+
+.venv
+venv
+env
+
+IDE/Editor temporary files and configuration folders
+
+.idea/
+.vscode/
+
+--- Project Specific Files and Caches ---
+
+Ignore user-uploaded screenshots and images (based on previously uploaded files)
+
+These should not be committed to the repository
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+Ignore log, temporary, and backup files
+
+*.log
+*.tmp
+*.bak
