@@ -1,3 +1,7 @@
 {
-    "language": "RU"
+    "language": "RU",
+    "use_activation": true,
+    "activation_words": ["алиса"],
+    "activation_timeout": 5
 }
+   
