@@ -5,7 +5,7 @@ CHANNELS = 1
 BLOCKSIZE = 16000
 DTYPE = "int16"
 
-def init_audio_device(sample_rate):
+def init_audio_device(sample_rate: int):
     device_index = sd.default.device[0]
     device_info = sd.query_devices(device_index)
     logging.info(f"🎧 Using default microphone: {device_info['name']} @ {sample_rate} Hz")

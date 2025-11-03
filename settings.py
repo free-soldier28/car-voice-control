@@ -2,7 +2,7 @@ import os
 import json
 import logging
 
-def load_settings(file_path):
+def load_settings(file_path: str):
     """Load language, activation flag, activation words, and timeout from settings.json."""
     if not os.path.exists(file_path):
         logging.error(f"❌ Settings file not found: {file_path}")

@@ -17,9 +17,6 @@ def main():
     try:
         lang, use_activation, activation_words, activation_timeout = load_settings(SETTINGS_FILE)
 
-        logging.info(f"🌐 Language set to: {lang}")
-        logging.info(f"🔑 Activation words: {activation_words}")
-
         commands = load_commands(COMMANDS_FILE)
         if not commands:
             logging.error("❌ No commands loaded. Exiting.")

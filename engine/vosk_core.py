@@ -18,6 +18,9 @@ def setup_recognizer(config: VoskConfig):
     recognizer = KaldiRecognizer(model, config.sample_rate)
     recognizer.SetWords(True)
     logging.info("✅ Model loaded successfully.")
+
+    if config.use_activation:
+        logging.info(f"🔑 Activation words: {config.activation_words}")
     return recognizer
 
 def extract_text(recognizer):
@@ -50,10 +53,6 @@ def process_text(text: str, config: VoskConfig, state: dict):
             return
 
         delay = round(now - state["activation_time"], 2) if state["activation_time"] else 0
-        logging.info(f"🧪 Received command: {text}")
-        if config.use_activation:
-            logging.info(f"⏱️ Delay from activation to command: {delay} seconds")
-            print(f"\n🗣️ [{lang}] ⏱️ Delay: {delay} seconds")
 
         handle_command(text, config.commands, lang)
 

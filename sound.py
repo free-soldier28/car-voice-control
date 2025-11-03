@@ -4,13 +4,13 @@ import logging
 
 pygame.mixer.init()
 
-def _play(filename):
+def _play(file_name: str):
     try:
-        path = os.path.join("sounds", filename)
+        path = os.path.join("sounds", file_name)
         sound = pygame.mixer.Sound(path)
         sound.play()
     except Exception as e:
-        logging.warning(f"⚠️ Failed to play sound '{filename}': {e}")
+        logging.warning(f"⚠️ Failed to play sound '{file_name}': {e}")
 
 def play_activation():
     _play("activation.wav")
@@ -18,5 +18,5 @@ def play_activation():
 def play_deactivation():
     _play("deactivation.wav")
 
-def play_custom(filename):
-    _play(filename)
+def play_custom(file_name):
+    _play(file_name)
