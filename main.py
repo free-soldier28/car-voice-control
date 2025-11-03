@@ -9,12 +9,13 @@ from utils.commands import load_commands
 MODEL_RU_PATH = "models/vosk-model-small-ru-0.22"
 MODEL_EN_PATH = "models/vosk-model-small-en-us-0.15"
 COMMANDS_FILE = "commands.json"
+SETTINGS_FILE = "settings.json"
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 def main():
     try:
-        lang, use_activation, activation_words, activation_timeout = load_settings()
+        lang, use_activation, activation_words, activation_timeout = load_settings(SETTINGS_FILE)
 
         logging.info(f"🌐 Language set to: {lang}")
         logging.info(f"🔑 Activation words: {activation_words}")

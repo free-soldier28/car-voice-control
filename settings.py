@@ -2,15 +2,13 @@ import os
 import json
 import logging
 
-SETTINGS_FILE = "settings.json"
-
-def load_settings():
+def load_settings(file_path):
     """Load language, activation flag, activation words, and timeout from settings.json."""
-    if not os.path.exists(SETTINGS_FILE):
-        logging.error(f"❌ Settings file not found: {SETTINGS_FILE}")
+    if not os.path.exists(file_path):
+        logging.error(f"❌ Settings file not found: {file_path}")
         return "EN", True, [], 5
 
-    with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     lang = data.get("language", "EN").upper()
